@@ -28,6 +28,6 @@ export default (state={isLoading: true, posts:[]},action) => {
         case LIKE:
             return {...state, posts: state.posts.map((post) => post._id === action.payload._id ? action.payload : post)};
         default:
-            return {...state};
+            return state;
     }
 }

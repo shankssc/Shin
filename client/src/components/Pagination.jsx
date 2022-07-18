@@ -11,7 +11,7 @@ import { getPosts } from '../actions/posts'
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if(page) dispatch(getPosts());
+        if(page) dispatch(getPosts(page));
     }, [page]);
 
     return (

@@ -13,7 +13,7 @@ export const getPosts = async (req, res) => {
 
         const posts = await PostMessage.find().sort({_id: -1}).limit(LIMIT).skip(startIndex);
 
-        console.log(postMessages);
+        console.log(posts);
 
         res.status(200).json({ data: posts, currentPage: Number(page), numberOfPages: Math.ceil(total / LIMIT) });
 
@@ -29,7 +29,7 @@ export const getPostsBySearch = async (req, res) => {
     try {
         const title = new RegExp(searchQuery, 'i');
 
-        const post = await PostMessage.find({ $or: [{ title}, {tags: { $in: tags.split(',') }}]})
+        const posts = await PostMessage.find({ $or: [{ title}, {tags: { $in: tags.split(',') }}]})
 
         res.json({ data: posts })
     } catch (error) {
