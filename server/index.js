@@ -16,6 +16,10 @@ app.use(cors());
 app.use('/posts',postRoutes);
 app.use('/user', userRoutes);
 
+app.get('/', (req,res) => {
+    res.send('APP is running.');
+})
+
 //Connecting to the MongoDB Cluster
 /*Note:- If you are using any special symbols in your password, then you must substitute it
 with % symbol followed by its hex code*/
