@@ -1,8 +1,9 @@
 import React, {useState,useEffect} from 'react'
 import { AppBar, Avatar, Button, Typography, Toolbar } from '@material-ui/core'
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import SHIN from '../../images/joseon.png';
+import SHIN from '../../images/grimmjow.png';
 import ggl from '../../images/textl.png';
+import bts from '../../images/bts.png';
 import useStyles from './styles';
 import decode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
@@ -46,9 +47,10 @@ const Navbar = () => {
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
     <Link to="/" className={classes.brandContainer}>
-        <img src={ggl} alt="icon" height="55px"/>
-        <img className={classes.image} src={SHIN} alt="icon" height="45px"/>
-    </Link> 
+        <img src={ggl} alt="icon" height="65px"/>
+        <img className={classes.image} src={SHIN} alt="icon" height="55px"/>
+    </Link>
+    
     <Toolbar className={classes.toolbar}>
         {user ? (
             <div className={classes.profile}>
